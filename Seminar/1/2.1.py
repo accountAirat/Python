@@ -8,9 +8,9 @@
 #     - 25, 5 -> да
 #     - 8,9 -> нет
 
-numberA = int(input("Введите число A: "))
-numberA = int(input("Введите число B: "))
-if A == B ** 2 or B == A ** 2:
+a = int(input("Введите число A: "))
+b = int(input("Введите число B: "))
+if a == b ** 2 or b == a ** 2:
     print("да")
 else:
     print("нет")
