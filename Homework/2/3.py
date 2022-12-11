@@ -9,6 +9,6 @@ n = int(input("Введите число: "))
 sum = 0
 for i in range(1, n+1):
     num = round((1 + (1/i))**i , 2)
-    sum = sum + num
+    sum += num
     print(f"{i} : {num}")
 print(sum)
