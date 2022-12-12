@@ -5,9 +5,11 @@
 def Sum_List(list_1):
     sum = 0
     for i in range(1,len(list1),2):
-        sum = sum + list1[i]
+        sum += list1[i]
     return sum
 
 list1 = [2, 3, 5, 9, 3]
 print(Sum_List(list1))
+
+# n=sum(list1[1::2])
 

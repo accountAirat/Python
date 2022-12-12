@@ -4,8 +4,10 @@
 # - 3 -> 11
 # - 2 -> 10
 n = 45
-b = ""
-while n > 0:
-    b = str(n % 2) + b
-    n = n // 2
-print(b)
+# b = ""
+# while n > 0:
+#     b = str(n % 2) + b
+#     n = n // 2
+# print(b)
+
+print(bin(n)[2:])

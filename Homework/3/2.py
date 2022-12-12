@@ -5,7 +5,7 @@
 # - [2, 3, 5, 6] => [12, 15]
 
 list_1 = [2, 3, 4, 5, 6]
-list1 = []
+list_2 = []
 for i in list_1:
-    list1.append(i * list_1.pop())
-print(list1)
+    list_2.append(i * list_1.pop())
+print(list_2)
