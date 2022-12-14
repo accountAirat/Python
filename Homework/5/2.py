@@ -61,10 +61,7 @@ def PlayerVsBot(mode):
             else:
                 step = bank % 29
             print(step)
-            if 0 > step or step > 28:
-                print("!!!Не верное число!!!")
-            else:
-                bank = bank - step
+            bank = bank - step
             if bank <= 0:
                 print("Поздравляю! Бот выиграл")
                 mode = "menu"
