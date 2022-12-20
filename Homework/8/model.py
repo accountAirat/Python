@@ -4,9 +4,11 @@ def search_worker(data, key, value):
 def search_salary(data, salary, range_line):
     return list(filter(lambda x: range_line[0] < int(x.get(salary,0)) < range_line[1], data))
 def add_worker(data, form, temp):
-    temp.insert(0,len(data)+1)
+    temp.insert(0,int(data[-1].get('id', 1000))+1)
     data.append(formation(form,temp))
     return data
+def delete_worker(data,key,id):
+    return list(filter(lambda x: x.get(key,) != id, data))
 
 def formation(form,line):
     string = dict(zip(form,line))
@@ -24,7 +26,7 @@ def write_txt(data):
     file = open('database.txt', 'w', encoding='UTF-8')
     for x in range(0, len(data)):
         file.writelines(f'{" ".join(map(str,data[x].values()))}')
-        file.writelines('\n')
+        file.write('\n')
     file.close()
 
 def write_csv(data):

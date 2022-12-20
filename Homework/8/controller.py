@@ -11,6 +11,7 @@ def сall_action():
     while selector != 0:
         selector = view.show_menu()
         data = model.read_txt(form)
+        view.print_list("Database loaded")
         match selector:
             case 1:
                 selector_2 = -1
@@ -50,10 +51,11 @@ def сall_action():
                 temp_data = model.search_salary(data,form[5],view.salary_range())
                 view.print_list(temp_data)
             case 4:
-                data = model.add_worker(data, form, view.input_full_name())
+                data = model.add_worker(data, form, view.input_worker_data())
                 model.write_txt(data)
-            # case 5:
-            #     delete_worker(data)
+            case 5:
+                data = model.delete_worker(data, form[0], view.input_id())
+                model.write_txt(data)
             # case 6:
             #     update_worker_data(data)
             # case 7:

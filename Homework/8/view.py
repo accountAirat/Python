@@ -17,8 +17,10 @@ def input_value():
 def exit():
     print('Выход')
 def print_list(data):
+    print("\n" + "=" * 20)
     print(*data, sep="\n")
 def parameter_search_worker():
+    print("\n" + "=" * 20)
     print("1. Фамилия")
     print("2. Имя")
     print("3. Отчество")
@@ -26,6 +28,7 @@ def parameter_search_worker():
     print("0. Выйти в меню")
     return int(input("Введите номер необходимого действия: "))
 def position_selection():
+    print("\n" + "=" * 20)
     print("Выберите необходимую должность")
     print("1. Менеджер")
     print("2. Программист")
@@ -33,17 +36,23 @@ def position_selection():
     print("0. Выйти в меню")
     return int(input("Введите номер необходимой должности: "))
 def salary_range():
+    print("\n" + "=" * 20)
     range_line = []
     range_line.append(int(input("Введите нижнею планку: ")))
     range_line.append(int(input("Введите верхнею планку: ")))
     return range_line
-def input_full_name():
+def input_worker_data():
+    print("\n" + "=" * 20)
     temp = []
     temp.append(input("Введите Фамилию: "))
     temp.append(input("Введите Имя: "))
     temp.append(input("Введите Отчество: "))
+    temp.append(input("Введите должность: "))
+    temp.append(input("Введите номер телефона №1: "))
+    temp.append(input("Введите номер телефона №2: "))
+    temp.append(input("Введите номер телефона №3: "))
     return temp
 def input_id():
-    return int(input("Введите номер сотрудкника id: "))
+    return input("Введите номер сотрудкника id: ")
 def finish():
     print("Выполнено")
