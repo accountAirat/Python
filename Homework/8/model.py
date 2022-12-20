@@ -1,4 +1,5 @@
-import datetime
+from datetime import datetime
+import json
 def search_worker(data, key, value):
     return list(filter(lambda x: x.get(key,) == value, data))
 def search_salary(data, salary, range_line):
@@ -8,12 +9,17 @@ def add_worker(data, form, temp):
     data.append(formation(form,temp))
     return data
 def delete_worker(data,key,id):
-    return list(filter(lambda x: x.get(key,) != id, data))
-
+    for i in range(0, len(data)-1):
+        if data[i].get(key,) == id:
+            data.pop(i)
+    return data
+    #return list(filter(lambda x: x.get(key,) != id, data))
+def update_worker(data, form, temp, id):
+    temp.insert(0,id)
+    data.insert(int(id)-1,(formation(form,temp)))
+    return data
 def formation(form,line):
-    string = dict(zip(form,line))
-    return string
-
+    return dict(zip(form,line))
 def read_txt(form):
     file = open('database.txt', 'r', encoding='UTF-8')
     data = []
@@ -21,18 +27,25 @@ def read_txt(form):
         data.append(formation(form,(i.split())))
     file.close()
     return data
-
 def write_txt(data):
     file = open('database.txt', 'w', encoding='UTF-8')
     for x in range(0, len(data)):
         file.writelines(f'{" ".join(map(str,data[x].values()))}')
         file.write('\n')
     file.close()
-
-def write_csv(data):
-    data = open(f'database_{datetime.datetime.now()}.csv', 'w')
-    for x in range(0, len(data)):
-        for y in range(0, len(data[x])):
-            data.writelines(f'{data[x][y]};')
-        data.writelines('\n')
-    data.close()
+def write_csv(data,form):
+    name_date = str(datetime.now().date())
+    file = open(f'database_{name_date}.csv', 'w')
+    for x in range(0, len(data)):    
+        for y in form:
+            file.writelines(f'{data[x].get(y,"")};')
+        file.writelines('\n')
+    file.close()
+def write_json(data):
+    name_date = str(datetime.now().date())
+    file = open(f'database_{name_date}.json', 'w')
+    for x in data:
+        temp = json.dumps(x)
+        file.write(temp)
+        file.writelines('\n')
+    file.close()

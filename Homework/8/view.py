@@ -11,7 +11,6 @@ def show_menu() -> int:
     print("8. Экспортировать данные в формате csv")
     print("0. Закончить работу")
     return int(input("Введите номер необходимого действия: "))
-
 def input_value():
     return input("Введите значение: ")
 def exit():
