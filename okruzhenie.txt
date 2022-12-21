@@ -1,0 +1,6 @@
+создать:python -m venv venv
+Активировать: venv\Scripts\activate
+Какие библеотеки есть: pip freeze
+Установить библеотеки и файла: pip install -r requirements.txt
+создать файл библеотек окружения: pip freeze > requirements.txt
+
