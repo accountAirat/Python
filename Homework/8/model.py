@@ -34,7 +34,7 @@ def write_txt(data):
         file.write('\n')
     file.close()
 def write_csv(data,form):
-    name_date = str(datetime.now().date())
+    name_date = str(datetime.now()).replace(":","_")[:16:]
     file = open(f'database_{name_date}.csv', 'w')
     for x in range(0, len(data)):    
         for y in form:
@@ -42,7 +42,7 @@ def write_csv(data,form):
         file.writelines('\n')
     file.close()
 def write_json(data):
-    name_date = str(datetime.now().date())
+    name_date = str(datetime.now()).replace(":","_")[:16:]
     file = open(f'database_{name_date}.json', 'w')
     for x in data:
         temp = json.dumps(x)
