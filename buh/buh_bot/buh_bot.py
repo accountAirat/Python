@@ -24,7 +24,7 @@ async def form(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 app = ApplicationBuilder().token(
-    "5893850453:AAESI6Vw72hqsASbfiBIvuKUpzarNr8cqh8").build()
+    "0000000000000000000000000000000000000000000000").build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT, check_step))
